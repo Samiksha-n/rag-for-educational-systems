@@ -1,0 +1,6 @@
+document_id,title,content,category
+1,Artificial Intelligence,Artificial Intelligence is the simulation of human intelligence by machines.,AI
+2,Machine Learning,Machine Learning enables systems to learn from data without explicit programming.,ML
+3,Deep Learning,Deep Learning uses neural networks with multiple layers.,DL
+4,NLP,Natural Language Processing helps computers understand human language.,NLP
+5,Generative AI,Generative AI creates new content such as text images and code.,GenAI
