@@ -1,30 +1,64 @@
-# Data Collection
+Introduction to Artificial Intelligence
+Artificial Intelligence (AI) is a branch of computer science that focuses on creating systems capable of
+performing tasks that normally require human intelligence. These tasks include learning, reasoning,
+problem-solving, decision-making, and language understanding.
+Machine Learning
+Machine Learning (ML) is a subset of Artificial Intelligence. It enables computers to learn patterns from data
+without being explicitly programmed. Machine learning algorithms improve their performance as they are
+exposed to more data.
+Types of Machine Learning
+1. Supervised Learning
+    Uses labeled data.
+    Examples: Classification and Regression.
+2. Unsupervised Learning
+    Uses unlabeled data.
+    Examples: Clustering and Association.
+3. Reinforcement Learning
+    Learns through rewards and penalties.
+    Commonly used in robotics and gaming. 
 
-## Dataset Name
-AI and Machine Learning Knowledge Base
+Deep Learning
+Deep Learning is a subset of Machine Learning that uses artificial neural networks with multiple layers. It is
+widely used in image recognition, speech recognition, and natural language processing.
+Advantages of Deep Learning
+• Handles large volumes of data.
+• Learns complex patterns automatically.
+• High accuracy in image and speech tasks.
 
-## Objective
-To collect relevant textual data for building a Retrieval-Augmented Generation (RAG) system capable of retrieving information and generating accurate responses.
+Neural Networks
+A Neural Network consists of interconnected nodes called neurons. These neurons process information
+similarly to the human brain.
 
-## Data Source
-Wikipedia Articles:
-- Artificial Intelligence
-- Machine Learning
-- Deep Learning
-- Natural Language Processing
-- Generative AI
+Components of a Neural Network
+• Input Layer
+• Hidden Layer
+• Output Layer
 
-## Dataset Format
-CSV
+Natural Language Processing
+Natural Language Processing (NLP) enables computers to understand and process human language.
+Examples include chatbots, translators, and voice assistants.
 
-## Features
-- Document ID
-- Title
-- Content
-- Category
+Applications of Artificial Intelligence
+• Healthcare
+• Education
+• Finance
+• Transportation
+• Cybersecurity
+• E-commerce
 
-## Data Volume
-100+ text documents
+Advantages of Artificial Intelligence
+• Reduces human effort.
+• Improves efficiency.
+• Provides faster decision-making.
+• Automates repetitive tasks.
 
-## Usage
-The dataset will be used for document retrieval, indexing, embedding generation, and answer generation in the RAG pipeline.This folder contains raw and processed datasets. 
+Disadvantages of Artificial Intelligence
+• High development cost.
+• Job displacement concerns.
+• Requires large datasets.
+• Ethical and privacy issues.
+
+Conclusion
+Artificial Intelligence is transforming industries by enabling machines to perform intelligent tasks. Machine
+Learning, Deep Learning, Neural Networks, and NLP are important areas within AI that contribute to
+modern technological advancements.
