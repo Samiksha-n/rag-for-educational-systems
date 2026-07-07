@@ -1,57 +1,101 @@
-# Educational RAG Tutor - Project Report
+# RAG for Educational Systems - Reports
 
-## Overview
+## API Testing Report (Task 1 - Week 5)
 
-This project implements a Retrieval-Augmented Generation (RAG) system that allows users to upload educational PDF documents and ask questions based on their content. The system retrieves relevant information from the uploaded documents and generates accurate answers using an AI language model.
+### Test Summary
+| Total Tests | Passed | Failed |
+|-------------|--------|--------|
+| 14 | 14 | 0 |
 
-## Features
+### Test Results
 
-- Upload educational PDF files
-- Extract and process document text
-- Split text into chunks
-- Generate embeddings for semantic search
-- Retrieve relevant content using cosine similarity
-- Generate context-aware answers using GPT
+#### GET /api/health
+| Test | Expected | Result |
+|------|----------|--------|
+| Status code | 200 | ✅ Pass |
+| Has 'status' field | True | ✅ Pass |
+| Status is 'ok' | True | ✅ Pass |
+| Has 'timestamp' field | True | ✅ Pass |
 
-## Technologies Used
+#### POST /api/chat (valid request)
+| Test | Expected | Result |
+|------|----------|--------|
+| Status code | 200 | ✅ Pass |
+| Has 'response' field | True | ✅ Pass |
+| Has 'conversation_id' | True | ✅ Pass |
+| Response is not empty | True | ✅ Pass |
 
-- Python
-- Tkinter
-- NumPy
-- PyPDF
-- OpenAI API
-- text-embedding-3-small
-- GPT-4o Mini
+#### POST /api/chat (error condition)
+| Test | Expected | Result |
+|------|----------|--------|
+| Status code | 400 | ✅ Pass |
+| Has 'error' field | True | ✅ Pass |
 
-## Workflow
+#### GET /api/history
+| Test | Expected | Result |
+|------|----------|--------|
+| Status code | 200 | ✅ Pass |
+| Has 'history' field | True | ✅ Pass |
+| History is a list | True | ✅ Pass |
 
-1. PDF Upload
-2. Text Extraction
-3. Text Chunking
-4. Embedding Generation
-5. Similarity Search
-6. Context Retrieval
-7. Answer Generation
+#### GET /api/users
+| Test | Expected | Result |
+|------|----------|--------|
+| Status code | 200 | ✅ Pass |
+| Has 'users' field | True | ✅ Pass |
 
-## Project Structure
+#### POST /api/feedback (valid)
+| Test | Expected | Result |
+|------|----------|--------|
+| Status code | 201 | ✅ Pass |
+| Has 'message' field | True | ✅ Pass |
 
-data/
-├── raw/
-├── cleaned/
-└── embeddings/
+#### POST /api/feedback (error condition)
+| Test | Expected | Result |
+|------|----------|--------|
+| Status code | 400 | ✅ Pass |
+| Has 'error' field | True | ✅ Pass |
 
-src/
-reports/
-deployment/
+## Sequence Diagram
 
-## Outcome
+User types question
+↓
+Streamlit Frontend
+↓
+POST /api/chat
+↓
+Flask Backend
+↓
+Google Gemini AI
+↓
+Flask Backend
+↓
+Streamlit Frontend
+↓
+User sees answer
 
-The Educational RAG Tutor successfully retrieves relevant information from uploaded documents and generates accurate answers using Retrieval-Augmented Generation (RAG).
+## API Documentation
 
-## Future Improvements
+### POST /api/chat
+Request:
+{"prompt": "What is RAG?"}
+Response:
+{"response": "RAG stands for...", "conversation_id": "uuid"}
 
-- Multi-PDF support
-- ChromaDB/FAISS integration
-- Voice-based interaction
-- Web deployment
-- Multi-language support
+### GET /api/history
+Response:
+{"history": [...]}
+
+### GET /api/users
+Response:
+{"users": [...]}
+
+### POST /api/feedback
+Request:
+{"conversation_id": "uuid", "rating": 5, "comment": "helpful!"}
+Response:
+{"message": "Feedback stored"}
+
+### GET /api/health
+Response:
+{"status": "ok", "service": "rag-backend", "timestamp": "..."}
